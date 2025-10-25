@@ -216,6 +216,7 @@ return {
           codelenses = {
             test = true,
           },
+          completeUnimported = true,
           usePlaceholders = true,
           semanticTokens = true,
           staticcheck = true,
