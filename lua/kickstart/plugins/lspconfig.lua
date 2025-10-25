@@ -213,6 +213,11 @@ return {
           analyses = {
             unusedparams = true,
           },
+          codelenses = {
+            test = true,
+          },
+          usePlaceholders = true,
+          semanticTokens = true,
           staticcheck = true,
           gofumpt = true,
         },
