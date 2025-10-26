@@ -71,4 +71,9 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- edit with 4 spaces for tab, keep tabstop at default 8
+vim.o.shiftwidth = 4
+vim.o.softtabstop = -1
+vim.o.expandtab = true
+
 -- vim: ts=2 sts=2 sw=2 et
