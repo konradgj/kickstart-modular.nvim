@@ -243,7 +243,30 @@ return {
           semanticTokens = true,
         },
         -- pyright = {},
-        rust_analyzer = {},
+        rust_analyzer = {
+          checkOnSave = true,
+          check = { command = 'clippy', features = 'all' },
+          assist = {
+            importGranularity = 'module',
+            importPrefix = 'self',
+          },
+          diagnostics = {
+            enable = true,
+            enableExperimental = true,
+          },
+          cargo = {
+            loadOutDirsFromCheck = true,
+            features = 'all', -- avoid error: file not included in crate hierarchy
+          },
+          procMacro = {
+            enable = true,
+          },
+          inlayHints = {
+            chainingHints = true,
+            parameterHints = true,
+            typeHints = true,
+          },
+        },
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
