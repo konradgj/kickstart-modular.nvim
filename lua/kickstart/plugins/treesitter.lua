@@ -25,8 +25,10 @@ return {
         'sql',
         'toml',
         'typescript',
+        'typst',
         'vim',
         'vimdoc',
+        'yaml',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
