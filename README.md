@@ -1,5 +1,22 @@
 # kickstart-modular.nvim
 
+## Setup
+```bash
+sudo pacman -S --noconfirm --needed gcc make git ripgrep fd unzip neovim
+```
+```bash
+sudo pacman -S --noconfirm \
+    tree-sitter-cli lua-language-server bash-language-server vscode-json-languageserver marksman \
+    go gopls delve \
+    nodejs npm  typescript-language-server \
+    python ruff \
+    rustup
+rustup default stable
+```
+```bash
+paru sqls
+```
+
 ## Introduction
 
 *This is a fork of [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) that moves from a single file to a multi file configuration.*
