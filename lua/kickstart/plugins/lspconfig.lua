@@ -306,7 +306,7 @@ return {
             },
           },
         },
-        copilot = { enabled = false },
+        -- copilot = { enabled = false },
       }
 
       -- Ensure the servers and tools above are installed
