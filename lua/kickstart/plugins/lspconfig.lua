@@ -267,6 +267,7 @@ return {
             typeHints = true,
           },
         },
+        neocmake = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -325,6 +326,12 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'gopls',
+        'bashls',
+        'ts_ls',
+        'jsonls',
+        'cmakelang',
+        'cmakelint',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
