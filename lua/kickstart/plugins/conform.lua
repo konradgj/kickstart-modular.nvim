@@ -41,28 +41,7 @@ return {
         css = { 'prettierd', 'prettier', stop_after_first = true },
         -- rust = { 'rustfmt' },
       },
-      formatters = {
-        prettierd = {
-          prepend_args = function()
-            return {
-              '--tab-width',
-              '4',
-              '--config-precedence',
-              'prefer-file',
-            }
-          end,
-        },
-        prettier = {
-          prepend_args = function()
-            return {
-              '--tab-width',
-              '4',
-              '--config-precedence',
-              'prefer-file',
-            }
-          end,
-        },
-      },
+      formatters = {},
     },
   },
 }
