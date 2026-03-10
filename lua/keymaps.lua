@@ -52,3 +52,19 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- vim: ts=2 sts=2 sw=2 et
+
+if vim.fn.has 'wsl' == 1 then
+  vim.g.clipboard = {
+    name = 'WslClipboard',
+    copy = {
+      ['+'] = 'clip.exe',
+      ['*'] = 'clip.exe',
+    },
+    paste = {
+      ['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+      ['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+    },
+    cache_enabled = 0,
+  }
+end
+vim.opt.clipboard = 'unnamedplus'
