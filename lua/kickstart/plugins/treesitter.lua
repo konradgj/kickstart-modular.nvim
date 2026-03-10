@@ -76,6 +76,7 @@ return {
         'typst',
         'vim',
         'vimdoc',
+        'xml',
         'yaml',
       }
       require('nvim-treesitter').install(parsers)
