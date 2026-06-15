@@ -73,6 +73,7 @@ vim.o.confirm = true
 
 -- edit with 4 spaces for tab, keep tabstop at default 8
 vim.o.shiftwidth = 4
+vim.o.tabstop = 4
 vim.o.softtabstop = -1
 vim.o.expandtab = true
 
