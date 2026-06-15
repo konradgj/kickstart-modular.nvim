@@ -208,7 +208,41 @@ return {
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        clangd = {},
+        clangd = {
+          keys = {
+            { '<leader>ch', '<cmd>LspClangdSwitchSourceHeader<cr>', desc = 'Switch Source/Header (C/C++)' },
+          },
+          root_markers = {
+            'compile_commands.json',
+            'compile_flags.txt',
+            'configure.ac', -- AutoTools
+            'Makefile',
+            'configure.ac',
+            'configure.in',
+            'config.h.in',
+            'meson.build',
+            'meson_options.txt',
+            'build.ninja',
+            '.git',
+          },
+          capabilities = {
+            offsetEncoding = { 'utf-16' },
+          },
+          cmd = {
+            'clangd',
+            '--background-index',
+            '--clang-tidy',
+            '--header-insertion=iwyu',
+            '--completion-style=detailed',
+            '--function-arg-placeholders',
+            '--fallback-style=llvm',
+          },
+          init_options = {
+            usePlaceholders = true,
+            completeUnimported = true,
+            clangdFileStatus = true,
+          },
+        },
         gopls = {
           gofumpt = true,
           codelenses = {
@@ -277,6 +311,9 @@ return {
         ts_ls = {},
         --
         bashls = {},
+        taplo = {},
+        yamlls = {},
+        ols = {},
         jsonls = {
           -- lazy-load schemastore when needed
           before_init = function(_, new_config)
@@ -327,11 +364,15 @@ return {
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         'gopls',
+        'ols',
+        'clangd',
         'bashls',
         'ts_ls',
         'jsonls',
         'cmakelang',
         'cmakelint',
+        'taplo',
+        'yamlls',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

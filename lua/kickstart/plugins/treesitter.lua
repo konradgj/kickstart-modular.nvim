@@ -64,6 +64,7 @@ return {
         'luadoc',
         'markdown',
         'markdown_inline',
+        'odin',
         'go',
         'gomod',
         'gosum',

@@ -6,15 +6,17 @@ sudo pacman -S --noconfirm --needed gcc make git ripgrep fd unzip neovim
 ```
 ```bash
 sudo pacman -S --noconfirm \
-    tree-sitter-cli lua-language-server bash-language-server vscode-json-languageserver marksman \
+    tree-sitter-cli lua-language-server bash-language-server marksman \
+    vscode-json-languageserver taplo-cli yaml-language-server \
     go gopls delve \
+    odin \
     nodejs npm  typescript-language-server \
     python ruff \
     rustup
 rustup default stable
 ```
 ```bash
-paru sqls
+paru sqls odinls-bin
 ```
 
 ## Introduction
